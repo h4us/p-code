@@ -1,0 +1,23 @@
+$--font-size-base: 14px;
+$--button-font-size: $--font-size-base * 1.75;
+$--button-padding-vertical: 12px * 1.25;
+$--button-padding-horizontal: 20px * 1.25;
+$--switch-width: 60px;
+$--switch-core-border-radius: 15px;
+$--switch-button-size: 26px;
+$--switch-height: 30px;
+
+$--font-path: '~element-theme-chalk/src/fonts';
+
+@font-face {
+ font-family: 'M PLUS Rounded 1c';
+ src: url('~@/assets/fonts/Yantramanav-Regular.ttf') format('truetype');
+}
+
+$font-sansserif: Yantramanav,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,"游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ",sans-serif;
+
+* {
+ font-family: $font-sansserif;
+}
+
+@import "~element-theme-chalk/src/index";

@@ -1,0 +1,40 @@
+{
+  "name": "vue-pcode",
+  "version": "0.1.0",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "author": "p-code-magazine",
+  "license": "MIT",
+  "homepage": "https://p-code-magazine.github.io",
+  "dependencies": {
+    "core-js": "^3.3.2",
+    "element-theme-chalk": "^2.12.0",
+    "element-ui": "^2.4.5",
+    "p5": "^0.10.2",
+    "register-service-worker": "^1.6.2",
+    "tesseract.js": "^2.0.0-beta.2",
+    "tone": "^13.8.25",
+    "vue": "^2.6.10",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.0.0",
+    "@vue/cli-plugin-eslint": "^4.0.0",
+    "@vue/cli-plugin-pwa": "^4.0.0",
+    "@vue/cli-plugin-vuex": "^4.0.0",
+    "@vue/cli-service": "^4.0.0",
+    "babel-eslint": "^10.0.3",
+    "babel-plugin-component": "^1.1.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "sass": "^1.19.0",
+    "sass-loader": "^8.0.0",
+    "vue-cli-plugin-element": "^1.0.1",
+    "vue-cli-plugin-vuetify": "^2.0.2",
+    "vue-template-compiler": "^2.6.10",
+    "yargs": "^15.0.2"
+  }
+}
