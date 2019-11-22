@@ -92,7 +92,7 @@ export default {
       editableTabs: [{
         title: 'P-Code Sample',
         name: '1',
-        content: 'Hello World'
+        content: 'Hello World! 440~~~~~~'
       }],
       tabIndex: 1
     }

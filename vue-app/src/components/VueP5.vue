@@ -221,7 +221,7 @@ export default {
           tessedit_ocr_engine_mode: OEM.OEM_TESSERACT_LSTM_COMBINED,
           // tessedit_pageseg_mode: PSM.SINGLE_BLOCK
           // tessedit_pageseg_mode: PSM.SINGLE_LINE,
-          tessedit_char_whitelist: '0123456789~^+*-=[<>\\/'
+          tessedit_char_whitelist: 'N0123456789~^+*-=[<>\\/'
         });
         const { data: { text } } = await worker.recognize(img);
         code = text;
