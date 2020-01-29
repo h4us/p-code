@@ -12,19 +12,45 @@ if('serviceWorker' in navigator) {
   });
 }
 
-const s = (p5) => {
-  let pcode;
+// -- TODO: more better way..
+let pcode;
+let didLoad = false;
+let editor;
+let isPlaying = false;
+let loopToggle;
+let doLoop = false;
 
-  let editor;
+document.getElementById('run').addEventListener('click', (e) => {
+  if(!didLoad) {
+    pcode = new PCode();
+    didLoad = true;
+  }
+
+  let code = editor.value();
+
+  if(code) {
+    let text = document.createTextNode(code);
+    let p = document.createElement('p');
+    p.appendChild(text);
+    p.addEventListener('click', event => {
+      editor.value(event.target.textContent);
+    });
+    log.prepend(p);
+    pcode.run(code);
+    isPlaying = true;
+  }
+});
+
+document.getElementById('loop').addEventListener('click', (e) => {
+  doLoop = !loopToggle.elt.checked;
+});
+// --
+
+const s = (p5) => {
   let runButton;
   let readButton;
-  let loopToggle;
   let slider;
   let log;
-
-  let didLoad = false;
-  let isPlaying = false;
-  let doLoop = false;
   let selectCamera;
 
   let capture;
@@ -87,11 +113,13 @@ const s = (p5) => {
           pcode.stop();
         }
       }
+
+      // console.log('->', pcode.pointer, pcode.tokens[pcode.pointer]);
     }
 
     p5.image(capture, 0, 0);
     p5.filter(p5.THRESHOLD, slider.value());
-  }
+  };
 
   let cameraChanged = () => {
     // ?
@@ -107,7 +135,7 @@ const s = (p5) => {
       audio: false
     });
     capture.hide();
-  }
+  };
 
   let readButtonClicked = () => {
     let url = canvas.elt.toDataURL('image/png');
@@ -118,32 +146,13 @@ const s = (p5) => {
         msg.style.visibility = "hidden";
         editor.value(text);
       });
-  }
+  };
 
   let runButtonClicked = () => {
-    if(!didLoad) {
-      pcode = new PCode();
-      didLoad = true;
-    }
-
-    let code = editor.value();
-
-    if(code) {
-      let text = document.createTextNode(code);
-      let p = document.createElement('p');
-      p.appendChild(text);
-      p.addEventListener('click', event => {
-        editor.value(event.target.textContent);
-      });
-      log.prepend(p);
-      pcode.run(code);
-      isPlaying = true;
-    }
   };
 
   let loopToggleChanged = () => {
-    doLoop = !loopToggle.elt.checked;
-  }
+  };
 };
 
 new P5(s);
