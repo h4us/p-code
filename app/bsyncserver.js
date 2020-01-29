@@ -6,7 +6,7 @@ const webpackConfig = require('./webpack.dev');
 const bundler = webpack(webpackConfig);
 
 const browserSyncs = [];
-numSyncServer = process.argv.length > 2 ? parseInt(process.argv[2]) : 3;
+const numSyncServer = process.argv.length > 2 ? parseInt(process.argv[2]) : 1;
 for(let i = 0; i < numSyncServer; i ++) {
   browserSyncs.push(browserSync.create(`syncserver-{i}`));
 }
